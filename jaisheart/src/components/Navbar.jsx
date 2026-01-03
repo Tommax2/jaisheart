@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import logo from "../../public/logo.jpeg";
+import logo from "/logo.jpeg";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
