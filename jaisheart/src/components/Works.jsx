@@ -49,7 +49,7 @@ const Works = () => {
         <h2 className={styles.sectionHeadText}>Jais ColorFlow.</h2>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="w-full flex flex-col">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,6 +61,33 @@ const Works = () => {
           Jais ColorFlow is the first mobile video player that gives you professional-grade color control 
           directly in the palm of your hand. Transform your visual experience in real-time.
         </motion.p>
+
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            <a
+              href="https://drive.google.com/uc?export=download&id=1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL" 
+              className="bg-[#915EFF] hover:bg-[#7a4cdb] text-white font-bold py-3 px-6 sm:py-4 sm:px-10 rounded-full text-base sm:text-xl transition-all shadow-lg shadow-purple-500/50 inline-block"
+            >
+              Download Jaiscolorflow APK
+            </a>
+          </motion.div>
+
+          <div className="flex flex-col items-start">
+            <p className="text-secondary text-xs sm:text-sm mb-2">Also available for transfer to Google Drive</p>
+            <button 
+              onClick={() => window.open('https://drive.google.com/file/d/1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL/view?usp=drivesdk', '_blank')}
+              className="flex items-center gap-2 border border-secondary text-white py-2 px-4 sm:px-6 rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Drive" className="w-4 h-4 sm:w-5 sm:h-5" />
+              Transfer to Drive
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
@@ -87,31 +114,6 @@ const Works = () => {
         <p className="mt-6 text-white font-bold text-[18px]">
           Stop settling for the default look. Download Jais ColorFlow today and start watching videos your way.
         </p>
-      </div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className="mt-10"
-      >
-        <a
-          href="https://drive.google.com/uc?export=download&id=1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL" 
-          className="bg-[#915EFF] hover:bg-[#7a4cdb] text-white font-bold py-4 px-10 rounded-full text-xl transition-all shadow-lg shadow-purple-500/50"
-        >
-          Download Jaiscolorflow APK
-        </a>
-      </motion.div>
-       <div className="mt-12 flex flex-col items-center">
-        <p className="text-secondary text-sm mb-4">Also available for transfer to Google Drive</p>
-        <div className="flex gap-4">
-          <button 
-            onClick={() => window.open('https://drive.google.com/file/d/1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL/view?usp=drivesdk', '_blank')}
-            className="flex items-center gap-2 border border-secondary text-white py-2 px-6 rounded-lg hover:bg-white/10 transition-all"
-          >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Drive" className="w-5 h-5" />
-            Transfer to Drive
-          </button>
-        </div>
       </div>
     </section>
   );
