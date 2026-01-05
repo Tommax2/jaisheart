@@ -36,7 +36,7 @@ const Navbar = () => {
               onClick={() => setActive(link.title)}
             >
               {link.id === "download" ? (
-                <a href="https://drive.google.com/uc?export=download&id=1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL">
+                <a href="https://drive.google.com/uc?export=download&id=1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2">
                   {link.title}
                 </a>
               ) : (
@@ -72,7 +72,7 @@ const Navbar = () => {
                   }}
                 >
                   {link.id === "download" ? (
-                    <a href="https://drive.google.com/uc?export=download&id=1QmepoLEi8Ihnvu4OBCXOJL1uzyJJiNjL">
+                    <a href="https://drive.google.com/uc?export=download&id=1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2">
                       {link.title}
                     </a>
                   ) : (
