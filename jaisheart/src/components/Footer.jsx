@@ -32,7 +32,7 @@ const Footer = () => {
         
         <div className="flex flex-col items-center md:items-end gap-4">
           <div className="flex gap-5">
-            <a href="#" className="text-secondary hover:text-white transition-colors text-[14px]">
+            <a href="https://privacy-policy-2x1k.onrender.com" className="text-secondary hover:text-white transition-colors text-[14px]">
               Privacy Policy
             </a>
             <a href="#" className="text-secondary hover:text-white transition-colors text-[14px]">
