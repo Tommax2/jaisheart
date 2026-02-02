@@ -59,7 +59,7 @@ const Works = () => {
         <p className={styles.sectionSubText}>Our Featured App</p>
         <div className="flex items-center gap-4">
           <img
-            src="/logo.jpeg"
+            src="/app logo.jpeg"
             alt="Jais ColorFlow logo"
             className="w-12 h-12 object-contain rounded-md"
           />
