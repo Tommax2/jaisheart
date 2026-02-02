@@ -12,7 +12,7 @@ const Navbar = () => {
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-       <Link
+        <Link
           to="/"
           className="flex items-center gap-2"
           onClick={() => {
@@ -23,7 +23,6 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
             Jaistechworld
-            
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -36,7 +35,7 @@ const Navbar = () => {
               onClick={() => setActive(link.title)}
             >
               {link.id === "download" ? (
-                <a href="https://drive.google.com/uc?export=download&id=1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2">
+                <a href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d">
                   {link.title}
                 </a>
               ) : (
@@ -50,9 +49,15 @@ const Navbar = () => {
             className="w-[28px] h-[28px] object-contain cursor-pointer flex flex-col justify-around"
             onClick={() => setToggle(!toggle)}
           >
-            <span className={`h-0.5 w-full bg-white transition-all ${toggle ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`h-0.5 w-full bg-white transition-all ${toggle ? 'opacity-0' : ''}`} />
-            <span className={`h-0.5 w-full bg-white transition-all ${toggle ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span
+              className={`h-0.5 w-full bg-white transition-all ${toggle ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`h-0.5 w-full bg-white transition-all ${toggle ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`h-0.5 w-full bg-white transition-all ${toggle ? "-rotate-45 -translate-y-2" : ""}`}
+            />
           </div>
           <div
             className={`${
@@ -72,7 +77,7 @@ const Navbar = () => {
                   }}
                 >
                   {link.id === "download" ? (
-                    <a href="https://drive.google.com/uc?export=download&id=1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2">
+                    <a href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d">
                       {link.title}
                     </a>
                   ) : (
@@ -80,12 +85,10 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
-            </ul> 
-          </div>
+            </ul>
           </div>
         </div>
-
-        
+      </div>
     </nav>
   );
 };

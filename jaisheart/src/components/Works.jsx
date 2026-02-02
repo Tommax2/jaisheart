@@ -57,7 +57,14 @@ const Works = () => {
         transition={{ duration: 0.5 }}
       >
         <p className={styles.sectionSubText}>Our Featured App</p>
-        <h2 className={styles.sectionHeadText}>Jais ColorFlow.</h2>
+        <div className="flex items-center gap-4">
+          <img
+            src="/logo.jpeg"
+            alt="Jais ColorFlow logo"
+            className="w-12 h-12 object-contain rounded-md"
+          />
+          <h2 className={styles.sectionHeadText}>Jais ColorFlow.</h2>
+        </div>
       </motion.div>
 
       <div className="w-full flex flex-col">
@@ -82,7 +89,7 @@ const Works = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <a
-              href="https://drive.google.com/uc?export=download&id=1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2"
+              href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d"
               className="bg-[#915EFF] hover:bg-[#7a4cdb] text-white font-bold py-3 px-6 sm:py-4 sm:px-10 rounded-full text-base sm:text-xl transition-all shadow-lg shadow-purple-500/50 inline-block"
             >
               Download Jaiscolorflow APK
@@ -96,8 +103,8 @@ const Works = () => {
             <button
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1FlL9T4zfFx8fFOqMtI1X-BCWx85m7Qu2/view?usp=drivesdk",
-                  "_blank"
+                  "https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d",
+                  "_blank",
                 )
               }
               className="flex items-center gap-2 border border-secondary text-white py-2 px-4 sm:px-6 rounded-lg hover:bg-white/10 transition-all text-sm sm:text-base"
