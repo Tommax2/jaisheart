@@ -7,87 +7,117 @@ import logo from "/logo.jpeg";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const closeMenu = () => setToggle(false);
+    window.addEventListener("resize", closeMenu);
+    return () => window.removeEventListener("resize", closeMenu);
+  }, []);
+
+  const renderLink = (link) => {
+    const baseClasses =
+      "text-[15px] font-semibold tracking-wide transition-all duration-300";
+    const isActive = active === link.title;
+    const activeClasses = isActive
+      ? "text-white"
+      : "text-secondary hover:text-white";
+
+    if (link.id === "download") {
+      return (
+        <a
+          href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d"
+          className={`${baseClasses} rounded-full border border-cyan-200/20 bg-gradient-to-r from-cyan-400/20 to-indigo-400/20 px-4 py-2 text-white shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:from-cyan-300/30 hover:to-indigo-300/30`}
+        >
+          {link.title}
+        </a>
+      );
+    }
+
+    return (
+      <a href={`#${link.id}`} className={`${baseClasses} ${activeClasses}`}>
+        {link.title}
+      </a>
+    );
+  };
+
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
-    >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+    <nav className="fixed top-0 z-30 w-full">
+      <div className="pointer-events-none absolute inset-0 h-20 bg-gradient-to-r from-[#050816]/95 via-[#151030]/95 to-[#050816]/95 backdrop-blur-xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-[78px] h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
+      <div className={`${styles.paddingX} relative w-full`}>
+        <div className="flex h-20 w-full items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
+          <img
+            src={logo}
+            alt="logo"
+            className="h-10 w-10 rounded-full border border-cyan-300/40 object-cover shadow-[0_0_20px_rgba(34,211,238,0.35)]"
+          />
+          <p className="cursor-pointer bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-[18px] font-bold text-transparent">
             Jaistechworld
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="hidden list-none flex-row items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] p-2 shadow-[0_8px_40px_rgba(0,0,0,0.45)] sm:flex">
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              className={`cursor-pointer rounded-full px-4 py-2 ${
+                active === link.title
+                  ? "bg-white/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.18)]"
+                  : ""
+              }`}
               onClick={() => setActive(link.title)}
             >
-              {link.id === "download" ? (
-                <a href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d">
-                  {link.title}
-                </a>
-              ) : (
-                <a href={`#${link.id}`}>{link.title}</a>
-              )}
+              {renderLink(link)}
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="flex flex-1 items-center justify-end sm:hidden">
           <div
-            className="w-[28px] h-[28px] object-contain cursor-pointer flex flex-col justify-around"
+            className="flex h-11 w-11 cursor-pointer flex-col justify-center gap-1.5 rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur"
             onClick={() => setToggle(!toggle)}
           >
             <span
-              className={`h-0.5 w-full bg-white transition-all ${toggle ? "rotate-45 translate-y-2" : ""}`}
+              className={`h-0.5 w-full bg-white transition-all duration-300 ${toggle ? "translate-y-2 rotate-45" : ""}`}
             />
             <span
-              className={`h-0.5 w-full bg-white transition-all ${toggle ? "opacity-0" : ""}`}
+              className={`h-0.5 w-full bg-white transition-all duration-300 ${toggle ? "opacity-0" : ""}`}
             />
             <span
-              className={`h-0.5 w-full bg-white transition-all ${toggle ? "-rotate-45 -translate-y-2" : ""}`}
+              className={`h-0.5 w-full bg-white transition-all duration-300 ${toggle ? "-translate-y-2 -rotate-45" : ""}`}
             />
-          </div>
-          <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(link.title);
-                  }}
-                >
-                  {link.id === "download" ? (
-                    <a href="https://drive.google.com/uc?export=download&id=1TVUyKPTItME5uOSKFyY_QAT7XvH3O85d">
-                      {link.title}
-                    </a>
-                  ) : (
-                    <a href={`#${link.id}`}>{link.title}</a>
-                  )}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
+      </div>
+      </div>
+
+      <div
+        className={`${
+          !toggle ? "pointer-events-none opacity-0" : "pointer-events-auto opacity-100"
+        } absolute left-0 top-20 w-full border-y border-white/10 bg-gradient-to-b from-[#0f172a]/95 to-[#020617]/95 px-6 py-6 shadow-2xl transition-all duration-300 sm:hidden`}
+      >
+        <ul className="flex list-none flex-col gap-3">
+          {navLinks.map((link) => (
+            <li
+              key={link.id}
+              className={`rounded-xl px-4 py-3 ${
+                active === link.title ? "bg-white/10" : "bg-transparent"
+              }`}
+              onClick={() => {
+                setToggle(false);
+                setActive(link.title);
+              }}
+            >
+              {renderLink(link)}
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
