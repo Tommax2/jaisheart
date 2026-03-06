@@ -74,11 +74,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-30 w-screen max-w-[100vw] overflow-x-hidden">
+    <nav className="fixed inset-x-0 top-0 z-[100] w-screen max-w-[100vw] overflow-x-hidden">
       <div className="pointer-events-none absolute inset-0 h-20 bg-gradient-to-r from-[#050816]/95 via-[#151030]/95 to-[#050816]/95 backdrop-blur-xl" />
       <div className="pointer-events-none absolute inset-x-0 top-[78px] h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
       <div className="relative w-full px-4 xs:px-6 sm:px-16">
-        <div className="flex h-20 w-full items-center justify-between">
+        <div className="relative z-[110] flex h-20 w-full items-center justify-between">
         <Link
           to="/"
           className="flex min-w-0 items-center gap-2.5 pr-2"
@@ -116,7 +116,7 @@ const Navbar = () => {
             type="button"
             aria-label="Toggle menu"
             aria-expanded={toggle}
-            className="flex h-11 w-11 flex-col justify-center gap-1.5 rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur transition-all duration-300 hover:border-cyan-300/40 hover:bg-white/15"
+            className="relative z-[115] flex h-11 w-11 flex-col justify-center gap-1.5 rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur transition-all duration-300 hover:border-cyan-300/40 hover:bg-white/15"
             onClick={() => setToggle(!toggle)}
           >
             <span
@@ -137,7 +137,7 @@ const Navbar = () => {
         onClick={() => setToggle(false)}
         className={`${
           toggle ? "opacity-100" : "pointer-events-none opacity-0"
-        } absolute left-0 top-20 h-[calc(100vh-5rem)] w-full bg-black/45 backdrop-blur-[2px] transition-opacity duration-300 sm:hidden`}
+        } absolute left-0 top-20 z-[101] h-[calc(100vh-5rem)] w-full bg-black/45 backdrop-blur-[2px] transition-opacity duration-300 sm:hidden`}
       />
 
       <div
@@ -145,7 +145,7 @@ const Navbar = () => {
           !toggle
             ? "pointer-events-none translate-y-2 opacity-0"
             : "pointer-events-auto translate-y-0 opacity-100"
-        } absolute inset-x-4 top-20 rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
+        } absolute inset-x-4 top-20 z-[110] rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
       >
         <div className="mb-4 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
           <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/70">
