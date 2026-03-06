@@ -74,14 +74,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-30 w-full overflow-x-clip">
+    <nav className="fixed inset-x-0 top-0 z-30 w-screen max-w-[100vw] overflow-x-hidden">
       <div className="pointer-events-none absolute inset-0 h-20 bg-gradient-to-r from-[#050816]/95 via-[#151030]/95 to-[#050816]/95 backdrop-blur-xl" />
       <div className="pointer-events-none absolute inset-x-0 top-[78px] h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
-      <div className={`${styles.paddingX} relative w-full`}>
+      <div className="relative w-full px-4 xs:px-6 sm:px-16">
         <div className="flex h-20 w-full items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex min-w-0 items-center gap-2.5"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -92,7 +92,7 @@ const Navbar = () => {
             alt="logo"
             className="h-10 w-10 rounded-full border border-cyan-300/40 object-cover shadow-[0_0_20px_rgba(34,211,238,0.35)]"
           />
-          <p className="cursor-pointer bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-[18px] font-bold text-transparent">
+          <p className="cursor-pointer whitespace-nowrap bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-[16px] font-bold text-transparent xs:text-[18px]">
             Jaistechworld
           </p>
         </Link>
