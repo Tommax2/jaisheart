@@ -74,7 +74,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-30 w-full">
+    <nav className="fixed top-0 z-30 w-full overflow-x-clip">
       <div className="pointer-events-none absolute inset-0 h-20 bg-gradient-to-r from-[#050816]/95 via-[#151030]/95 to-[#050816]/95 backdrop-blur-xl" />
       <div className="pointer-events-none absolute inset-x-0 top-[78px] h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
       <div className={`${styles.paddingX} relative w-full`}>
@@ -145,7 +145,7 @@ const Navbar = () => {
           !toggle
             ? "pointer-events-none translate-y-2 opacity-0"
             : "pointer-events-auto translate-y-0 opacity-100"
-        } absolute left-1/2 top-20 w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
+        } absolute inset-x-4 top-20 rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
       >
         <div className="mb-4 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
           <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/70">
