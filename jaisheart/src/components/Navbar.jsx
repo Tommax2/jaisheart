@@ -62,7 +62,7 @@ const Navbar = () => {
         className={`group flex items-center justify-center gap-3 rounded-xl border px-4 py-3 text-center transition-all duration-300 ${
           isActive
             ? "border-white/20 bg-white/10 text-white"
-            : "border-white/10 bg-white/[0.03] text-secondary hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+            : "border-white/10 bg-white/[0.03] text-white/90 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
         }`}
       >
         <span className="text-[14px] font-semibold tracking-wide">{link.title}</span>
@@ -137,7 +137,7 @@ const Navbar = () => {
         onClick={() => setToggle(false)}
         className={`${
           toggle ? "opacity-100" : "pointer-events-none opacity-0"
-        } absolute left-0 top-20 z-[101] h-[calc(100vh-5rem)] w-full bg-black/45 backdrop-blur-[2px] transition-opacity duration-300 sm:hidden`}
+        } fixed left-0 top-20 z-[120] h-[calc(100vh-5rem)] w-full bg-black/45 backdrop-blur-[2px] transition-opacity duration-300 sm:hidden`}
       />
 
       <div
@@ -145,7 +145,7 @@ const Navbar = () => {
           !toggle
             ? "pointer-events-none translate-y-2 opacity-0"
             : "pointer-events-auto translate-y-0 opacity-100"
-        } absolute inset-x-4 top-20 z-[110] rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
+        } fixed inset-x-4 top-20 z-[130] rounded-2xl border border-white/10 bg-gradient-to-b from-[#0f172a]/95 via-[#111827]/95 to-[#020617]/95 px-5 pb-5 pt-4 shadow-2xl transition-all duration-300 sm:hidden`}
       >
         <div className="mb-4 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
           <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/70">
