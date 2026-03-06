@@ -81,7 +81,7 @@ const Navbar = () => {
         <div className="flex h-20 w-full items-center justify-between">
         <Link
           to="/"
-          className="flex min-w-0 items-center gap-2.5"
+          className="flex min-w-0 items-center gap-2.5 pr-2"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -92,7 +92,7 @@ const Navbar = () => {
             alt="logo"
             className="h-10 w-10 rounded-full border border-cyan-300/40 object-cover shadow-[0_0_20px_rgba(34,211,238,0.35)]"
           />
-          <p className="cursor-pointer whitespace-nowrap bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-[16px] font-bold text-transparent xs:text-[18px]">
+          <p className="max-w-[45vw] cursor-pointer truncate bg-gradient-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-[16px] font-bold text-transparent xs:max-w-none xs:text-[18px]">
             Jaistechworld
           </p>
         </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="flex flex-1 items-center justify-end sm:hidden">
+        <div className="flex shrink-0 items-center justify-end sm:hidden">
           <button
             type="button"
             aria-label="Toggle menu"
