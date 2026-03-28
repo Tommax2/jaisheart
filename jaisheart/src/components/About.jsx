@@ -4,7 +4,10 @@ import { styles } from "../styles";
 
 const About = () => {
   return (
-    <section id="about" className={`${styles.padding} max-w-7xl mx-auto relative z-0`}>
+    <section
+      id="about"
+      className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,6 +17,35 @@ const About = () => {
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>About the CEO.</h2>
       </motion.div>
+
+      <div className="mt-10 bg-white/5 p-6 rounded-2xl border border-white/10">
+        <h3 className="text-[#915EFF] text-[22px] font-bold mb-3">
+          Video Game Development
+        </h3>
+        <p className="text-secondary text-[17px] leading-[30px] max-w-3xl">
+          JaisTechWorld combines creative gameplay design and robust software
+          architecture to deliver premium mobile game experiences. From concept
+          to launch, the focus remains on playability, performance, and
+          memorable user engagement.
+        </p>
+      </div>
+
+      <div
+        id="gadget"
+        className="mt-10 bg-white/5 p-6 rounded-2xl border border-white/10"
+      >
+        <h3 className="text-[#915EFF] text-[22px] font-bold mb-3">
+          Gadget & Accessories
+        </h3>
+        <p className="text-secondary text-[17px] leading-[30px] max-w-3xl">
+          In addition to being a software innovator, Joseph also runs a curated
+          gadget and accessories shop. He offers premium tech products such as
+          smart devices, quality phone accessories, chargers, headphones, and
+          gaming peripherals. His mission is to provide reliable and affordable
+          gear that complements his digital products and enhances the everyday
+          tech experience for customers.
+        </p>
+      </div>
 
       <div className="mt-10 flex flex-col md:flex-row items-center gap-10">
         <motion.div
@@ -37,11 +69,16 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex-1"
         >
-          <h3 className="text-white text-[24px] font-bold mb-4">Joseph Idowu Samuel</h3>
+          <h3 className="text-white text-[24px] font-bold mb-4">
+            Joseph Idowu Samuel
+          </h3>
           <p className="text-secondary text-[17px] leading-[30px] max-w-3xl">
-            Born in Nigeria and deeply passionate about technology, Joseph Idowu Samuel is the visionary CEO behind JaisTechWorld. 
-            His journey in the tech world is driven by a commitment to innovation and a desire to create impactful digital experiences. 
-            With a focus on excellence and a forward-thinking approach, he leads the team in delivering cutting-edge solutions that resonate with users globally.
+            Born in Nigeria and deeply passionate about technology, Joseph Idowu
+            Samuel is the visionary CEO behind JaisTechWorld. His journey in the
+            tech world is driven by a commitment to innovation and a desire to
+            create impactful digital experiences. With a focus on excellence and
+            a forward-thinking approach, he leads the team in delivering
+            cutting-edge solutions that resonate with users globally.
           </p>
         </motion.div>
       </div>
