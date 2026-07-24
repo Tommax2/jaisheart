@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { styles } from "../styles";
 
 const Section = ({ number, title, children }) => (
@@ -22,7 +23,7 @@ const PrivacyPolicy = () => {
   return (
     <section
       id="privacy-policy"
-      className={`${styles.padding} relative z-0 mx-auto max-w-7xl scroll-mt-20`}
+      className={`${styles.padding} relative z-0 mx-auto max-w-7xl pt-32 sm:pt-36`}
       aria-labelledby="privacy-policy-title"
     >
       <motion.div
@@ -31,6 +32,13 @@ const PrivacyPolicy = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
+        <Link
+          to="/"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-white"
+        >
+          <span aria-hidden="true">←</span>
+          Back to home
+        </Link>
         <p className={styles.sectionSubText}>Legal &amp; privacy</p>
         <h2 id="privacy-policy-title" className={styles.sectionHeadText}>
           Naija Kombat Privacy Policy
@@ -170,7 +178,7 @@ const PrivacyPolicy = () => {
               className="inline-flex max-w-full items-center gap-3 break-all rounded-xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 font-semibold text-cyan-100 transition hover:border-cyan-200/40 hover:bg-cyan-300/15 hover:text-white"
             >
               <span aria-hidden="true">✉</span>
-              jaistechworld999@gmail.com
+              jaistechworld@gmail.com
             </a>
           </Section>
         </div>

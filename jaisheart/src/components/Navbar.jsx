@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import logo from "/logo.jpeg";
@@ -7,6 +7,9 @@ import logo from "/logo.jpeg";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+  const sectionHref = (id) =>
+    location.pathname === "/" ? `#${id}` : `/#${id}`;
 
   useEffect(() => {
     const closeMenu = () => setToggle(false);
@@ -34,7 +37,7 @@ const Navbar = () => {
     }
 
     return (
-      <a href={`#${link.id}`} className={`${baseClasses} ${activeClasses}`}>
+      <a href={sectionHref(link.id)} className={`${baseClasses} ${activeClasses}`}>
         {link.title}
       </a>
     );
@@ -58,7 +61,7 @@ const Navbar = () => {
     const isActive = active === link.title;
     return (
       <a
-        href={`#${link.id}`}
+        href={sectionHref(link.id)}
         className={`group flex items-center justify-center gap-3 rounded-xl border px-4 py-3 text-center transition-all duration-300 ${
           isActive
             ? "border-white/20 bg-white/10 text-white"

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import logo from "/logo.jpeg";
 
@@ -75,12 +76,12 @@ const Footer = () => {
 
         <div className="flex flex-col items-center md:items-end gap-4">
           <div className="flex gap-5 items-center">
-            <a
-              href="#privacy-policy"
+            <Link
+              to="/privacy-policy"
               className="text-secondary hover:text-white transition-colors text-[14px]"
             >
               Privacy Policy
-            </a>
+            </Link>
             <a
               href="#"
               className="text-secondary hover:text-white transition-colors text-[14px]"
