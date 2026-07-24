@@ -5,6 +5,7 @@ import {
   HomePage,
   About,
   Works,
+  PrivacyPolicy,
   Footer
 } from "./components";
 
@@ -17,6 +18,7 @@ const App = () => {
           <HomePage />
           <Works />
           <About />
+          <PrivacyPolicy />
           <Footer />
         </div>
       </div>

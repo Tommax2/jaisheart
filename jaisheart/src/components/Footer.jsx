@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-end gap-4">
           <div className="flex gap-5 items-center">
             <a
-              href="https://privacy-policy-2x1k.onrender.com"
+              href="#privacy-policy"
               className="text-secondary hover:text-white transition-colors text-[14px]"
             >
               Privacy Policy
