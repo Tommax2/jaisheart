@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 
@@ -26,12 +25,7 @@ const PrivacyPolicy = () => {
       className={`${styles.padding} relative z-0 mx-auto max-w-7xl pt-32 sm:pt-36`}
       aria-labelledby="privacy-policy-title"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
+      <div>
         <Link
           to="/"
           className="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-white"
@@ -46,15 +40,9 @@ const PrivacyPolicy = () => {
         <p className="mt-3 text-sm font-medium text-cyan-200">
           Last updated: July 24, 2026
         </p>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 28 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.55, delay: 0.1 }}
-        className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.025] shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
-      >
+      <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.025] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
         <div className="border-b border-white/10 bg-gradient-to-r from-cyan-400/10 via-indigo-400/10 to-transparent p-6 sm:p-8">
           <p className="max-w-4xl text-[15px] leading-7 text-white/80 sm:text-base">
             This Privacy Policy describes our policies regarding the collection,
@@ -182,7 +170,7 @@ const PrivacyPolicy = () => {
             </a>
           </Section>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
